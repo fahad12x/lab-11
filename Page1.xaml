@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="lab_11_web_2.Page1"
+             Title="Page1"
+             BackgroundImageSource="back1.jpg">
+
+    <ScrollView>
+        <StackLayout>
+            <CollectionView x:Name="collView" SelectionChanged="OnCollectionViewSelectionChanged" SelectionMode="Single" HeightRequest="120" VerticalOptions="StartAndExpand" HorizontalOptions="Center">
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout Orientation="Horizontal"/>
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Padding="5" Grid.RowDefinitions="70,35" Grid.ColumnDefinitions="90">
+                            <Border HeightRequest="60" WidthRequest="60" StrokeShape="RoundRectangle 30">
+                                <Image Source="{Binding ImageUrl}" Aspect="AspectFill" HeightRequest="60" WidthRequest="60"/>
+                            </Border>
+                            <Label Grid.Row="1" Text="{Binding cataTitle}" FontAttributes="Italic" VerticalOptions="Center"/>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <VerticalStackLayout Spacing="25" Padding="30,0" VerticalOptions="Center">
+                <ListView HasUnevenRows="true" x:Name="myListView" SelectionMode="Single" ItemSelected="myListView_ItemSelected">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="Center">
+                                    <Image Source="{Binding ImageUrl}" HeightRequest="60" WidthRequest="60"/>
+                                    <Label Text="{Binding Price, StringFormat='{0} SR'}" HorizontalOptions="Center" TextColor="#E61C1C"/>
+                                    <Label Text="{Binding Title}"/>
+                                    <Image Source="cart.png" HeightRequest="40" WidthRequest="80"/>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </VerticalStackLayout>
+        </StackLayout>
+    </ScrollView>
+
+
+</ContentPage>

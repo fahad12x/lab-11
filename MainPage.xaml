@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="lab_11_web_2.MainPage">
+
+        <ScrollView>
+            <StackLayout Padding="10">
+                <Image Source="icobook.png" WidthRequest="100" HeightRequest="100" />
+                <Label Text=" Peruzal" HorizontalOptions="Center" TextColor="Gray" />
+                <Entry x:Name="txt1" Placeholder="Username" Keyboard="Email" />
+                <Entry x:Name="txt2" Placeholder="Password" IsPassword="true" />
+                <StackLayout Orientation="Horizontal">
+                    <Button Text="Login" Clicked="Button_Clicked"  HorizontalOptions="FillAndExpand" BackgroundColor="Green" TextColor="White"/>
+                    <Button Text="Register" HorizontalOptions="FillAndExpand" BackgroundColor="Gray" TextColor="White" />
+                </StackLayout>
+                <Label Text="Terms and Conditions" TextColor="Gray" HorizontalOptions="Center" VerticalOptions="EndAndExpand" />
+            </StackLayout>
+
+        </ScrollView>
+
+
+</ContentPage>

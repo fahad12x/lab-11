@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="lab_11_web_2.Page2"
+             Title="Page2">
+
+    <ScrollView>
+        <StackLayout VerticalOptions="CenterAndExpand">
+            <ListView  HasUnevenRows="true" x:Name="myListView"  SelectionMode="None">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout VerticalOptions="CenterAndExpand" >
+                                <Image Source="{Binding ImageUrl}"
+                           HeightRequest="60"    WidthRequest="60" />
+                                <Label  Text="{Binding Price} " TextColor="#E61C1C" HorizontalOptions="Center"    />
+                                <Label Text="{Binding Title}" HorizontalOptions="Center"/>
+                                <Label Text="{Binding info}" TextColor="Green" />
+                                <StackLayout Orientation="Horizontal">
+                                    <Label FontSize="Large" Text="{Binding Source={x:Reference _stepper}, Path=Value, StringFormat='Quantity {0}'}" VerticalOptions="CenterAndExpand" />
+                                    <Stepper x:Name="_stepper" Minimum="0"   Maximum="100" Value="{Binding quant}"  Increment="1" HorizontalOptions="Center" />
+                                </StackLayout>
+
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Button Text="buy" Clicked="Button_Clicked_1" BackgroundColor="Blue" TextColor="White"   CornerRadius="20" />
+            <ImageButton Source="home.png"  HeightRequest="50" Clicked="Button_Clicked" Margin="5" />
+            <ImageButton Source="logout.png"  HeightRequest="50" Clicked="ImageButton_Cliked" Margin="5" />
+        </StackLayout>
+    </ScrollView>
+
+</ContentPage>
