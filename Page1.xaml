@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="lab_11_web_2.Page1"
              Title="Page1"
-             BackgroundImageSource="back1.jpg">
+             BackgroundImageSource="back4.jpg">
 
     <ScrollView>
         <StackLayout>
