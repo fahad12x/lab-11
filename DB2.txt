@@ -1,0 +1,49 @@
+CREATE TABLE [dbo].[book](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[title] [varchar](50) NULL,
+	[info] [varchar](50) NULL,
+	[price] [decimal](5, 1) NULL,
+	[discount] [varchar](50) NULL,
+	[pubdate] [date] NULL,
+	[category] [int] NULL,
+	[bookquantity] [int] NULL,
+	[imgfile] [varchar](50) NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+)
+-----------------------------
+CREATE TABLE [dbo].[bookorder](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[custname] [varchar](50) NOT NULL,
+	[orderdate] [date] NOT NULL,
+	[total] [int] NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+)
+-------------------------------
+CREATE TABLE [dbo].[orderline](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[itemname] [varchar](50) NOT NULL,
+	[itemquant] [int] NOT NULL,
+	[itemprice] [decimal](5, 1) NULL,
+	[orderid] [int] NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+)
+-------------------------------
+CREATE TABLE [dbo].[usersaccounts ](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[name] [varchar](50) NULL,
+	[pass] [varchar](50) NULL,
+	[role] [varchar](50) NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+)
